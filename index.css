@@ -1,1 +1,68 @@
 /* FORSIDE */
+
+/* hero */
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* den er væk????? */
+.scroll-down {
+  position: relative;
+  justify-content: center;
+
+  height: 100%;
+  width: 100%;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* arkade spil */
+
+.spil-maskine img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  place-self: center;
+  left: 13%;
+}
+
+/* ANMELDELSER BANNER */
+.banner {
+  position: relative;
+  justify-content: space-between;
+  align-items: flex;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background-color: white;
+  border: 1px solid grey;
+  font-family: "Roboto Mono", serif;
+  font-size: 1rem;
+  white-space: nowrap;
+  top: 600px;
+}
+
+.breadcrumb strong {
+  font-weight: bold;
+}
+
+.breadcrumb em {
+  font-style: italic;
+}
+
+.stars {
+  font-size: 1.3rem;
+  letter-spacing: 5px;
+}

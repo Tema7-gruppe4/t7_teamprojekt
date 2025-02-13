@@ -27,6 +27,17 @@
 }
 
 /* VAR COLOR */
+:root {
+  --primary-color: #3669db;
+  --secondary-color: #f7b4f7;
+  --background-color: #f8f0e7;
+  --text-color: #3f3f3f;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
 
 /* STYLING AF HEADER */
 

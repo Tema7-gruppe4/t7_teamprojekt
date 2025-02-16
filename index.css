@@ -1,68 +1,132 @@
 /* FORSIDE */
 
-/* hero */
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5efe7;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+/* Hero Section */
 .hero {
-  position: relative;
-  height: 100vh;
+  text-align: center;
   width: 100%;
-  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 50px;
+}
+.scroll-down {
+  margin-top: 80px;
+  animation: pulse 10s linear infinite;
+}
+
+/* Arcade Section */
+.arcade {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.arcade-machine img {
+  width: 100%;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+
+  border-radius: 8px;
+  margin: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.banner-text {
+  animation: scrollText 60s linear infinite;
+}
+
+/* Weekly Inspiration */
+.weekly-inspiration {
+  text-align: center;
+  margin: 30px;
+  font-family: "Press Start 2P", serif;
+}
+.inspiration-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 }
-
-.hero img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
-/* den er væk????? */
-.scroll-down {
-  position: relative;
-  justify-content: center;
-
-  height: 100%;
-  width: 100%;
-  animation: pulse 1.5s infinite ease-in-out;
-}
-
-/* arkade spil */
-
-.spil-maskine img {
-  position: absolute;
-  width: 100%;
-  height: auto;
-  max-width: 400px;
-  place-self: center;
-  left: 13%;
-}
-
-/* ANMELDELSER BANNER */
-.banner {
-  position: relative;
-  justify-content: space-between;
-  align-items: flex;
-  padding: 10px 20px;
+.inspiration-card {
+  background: white;
+  padding: 5px;
   border-radius: 8px;
-  background-color: white;
-  border: 1px solid grey;
-  font-family: "Roboto Mono", serif;
-  font-size: 1rem;
-  white-space: nowrap;
-  top: 600px;
+  border: 1px solid black;
+  width: 50%;
+  text-align: left;
+  font-family: "Silkscreen", serif;
+  font-size: 0.8rem;
+}
+.shop-button {
+  border-radius: 8px;
+  background: white;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  color: #3f3f3f;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
 }
 
-.breadcrumb strong {
-  font-weight: bold;
+.notes {
+  width: 100%;
+}
+.arrow {
+  color: #3669db;
+  background-color: #f8f0e7;
+  border: 1px solid #f8f0e7;
+  padding: 50px;
+}
+/* Newsletter */
+.newsletter {
+  padding: 60px;
+}
+.newsletter input {
+  padding: 10px;
+  width: 80%;
+  max-width: 250px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.subscribe {
+  border-radius: 8px;
+  background: rgb(0, 0, 0);
+  margin: 10px auto;
+  padding: 10px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
 }
 
-.breadcrumb em {
-  font-style: italic;
-}
-
-.stars {
-  font-size: 1.3rem;
-  letter-spacing: 5px;
+.lille-logo {
+  width: 30%;
+  height: auto;
 }

@@ -1,0 +1,136 @@
+/* FORSIDE */
+
+/* General Styles */
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5efe7;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-logo {
+  width: 90%;
+  max-width: 800px;
+  margin-top: 50px;
+}
+.scroll-down {
+  margin-top: 80px;
+  animation: pulse 10s linear infinite;
+}
+
+/* Arcade Section */
+.arcade {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.arcade-machine img {
+  width: 100%;
+}
+
+/* Banner */
+.banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: white;
+  border: 1px solid black;
+
+  border-radius: 8px;
+  margin: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.banner-text {
+  animation: scrollText 60s linear infinite;
+}
+
+/* Weekly Inspiration */
+.weekly-inspiration {
+  text-align: center;
+  margin: 30px;
+  font-family: "Press Start 2P", serif;
+}
+.inspiration-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inspiration-card {
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid black;
+  width: 50%;
+  text-align: left;
+  font-family: "Silkscreen", serif;
+  font-size: 0.8rem;
+}
+.inspiration-card li {
+  margin-left: -20px;
+}
+
+.shop-button {
+  border-radius: 8px;
+  background: white;
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  color: #3f3f3f;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.notes {
+  width: 100%;
+}
+.arrow {
+  color: #3669db;
+  background-color: #f8f0e7;
+  border: 1px solid #f8f0e7;
+  padding: 50px;
+}
+/* Newsletter */
+.newsletter {
+  padding: 60px;
+}
+.newsletter input {
+  padding: 10px;
+  width: 80%;
+  max-width: 250px;
+  border: 1px solid black;
+  margin-bottom: 10px;
+  border-radius: 8px;
+}
+.subscribe {
+  border-radius: 8px;
+  background: rgb(0, 0, 0);
+  margin: 10px auto;
+  padding: 10px;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.lille-logo {
+  width: 30%;
+  height: auto;
+}

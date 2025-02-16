@@ -1,0 +1,164 @@
+/* RESET */
+
+/* FONTS */
+.press-start-2p-regular {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-mono > {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* VAR COLOR */
+:root {
+  --primary-color: #3669db;
+  --secondary-color: #f7b4f7;
+  --background-color: #f8f0e7;
+  --text-color: #3f3f3f;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* STYLING AF HEADER */
+/* Header, anderledes fra de andre sider */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.header-container p {
+  font-weight: bold;
+}
+.icon {
+  width: 24px;
+  height: 24px;
+}
+.search-container {
+  position: relative;
+}
+
+.search-field {
+  display: none;
+  padding: 5px;
+  margin-left: 10px;
+  border: 1px solid #3669db;
+  border-radius: 4px;
+  opacity: 80%;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.search-field.active {
+  display: inline-block;
+}
+
+.menu {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  width: 200px;
+  border-radius: 5px;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  padding: 30px;
+  border-bottom: 1px solid #3669db;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.menu-icon {
+  font-size: 28px;
+  cursor: pointer;
+  color: #3669db;
+}
+
+/* STYLING AF FOOTER */
+/* Footer */
+footer {
+  padding: 60px;
+  font-family: "Roboto Mono", serif;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: left;
+}
+
+.footer-bottom p {
+  color: #3f3f3f77;
+  font-size: 0.7rem;
+  margin: 30px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #3f3f3f;
+  font-weight: bold;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer-socials img {
+  width: 60px;
+  height: auto;
+}

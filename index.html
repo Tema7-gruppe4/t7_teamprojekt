@@ -3,7 +3,135 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Fresh Cart</title>
+    <!-- links -->
+    <!-- css -->
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="generelt/animationer.css" />
+    <link rel="stylesheet" href="generelt/generel.css" />
+    <!-- js -->
+    <script src="index.js" defer></script>
+    <script src="generelt/generel.js" defer></script>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io-3/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io-3/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io-3/favicon-16x16.png" />
+    <link rel="manifest" href="favicon_io-3/site.webmanifest" />
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Press+Start+2P&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
   </head>
-  <body></body>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <div class="search-container">
+          <img src="assets/search.svg" alt="Search" class="icon" id="search-icon" />
+          <input type="text" id="search-field" class="search-field" placeholder="Search..." />
+        </div>
+        <p>SHOP [ONLINE]</p>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Shop</a></li>
+          <li><a href="#">Cart</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero  -->
+    <section class="hero">
+      <img src="assets/hero-logo.svg" alt="Fresh Cart" class="hero-logo" />
+      <div class="scroll-down">
+        <img src="assets/scroll-down.svg" alt="Scroll down" />
+      </div>
+    </section>
+
+    <!-- Arcade  -->
+    <section class="arcade">
+      <div class="arcade-machine">
+        <img src="assets/arcade-mobil.svg" alt="Arcade Machine" />
+      </div>
+    </section>
+
+    <!-- Comments Banner -->
+    <div class="banner">
+      <div class="banner-text">
+        <span class="breadcrumb"> <strong>Comments and Ratings</strong> / <em>"I am really happy with my experience at Fresh Cart! The products are of high quality, and they were delivered quickly. It was easy to find everything I needed, and I will definitely shop here again." ★★★★★</em> <strong>Comments and Ratings</strong> / <em>"I’ve used Fresh Cart several times, and I’m always happy with the products. The only reason I didn’t give 5 stars is that sometimes I have a bit of a wait for customer service replies. But when they respond, they are very helpful!" ★★★★☆</em> </span>
+      </div>
+    </div>
+
+    <!-- Weekly Inspiration -->
+    <section class="weekly-inspiration">
+      <h2>Weekly Inspiration</h2>
+      <div class="inspiration-container">
+        <button class="arrow"><img src="assets/left-pil.svg" alt="Notes" /></button>
+        <div class="inspiration-card">
+          <img class="notes" src="assets/notes.svg" alt="Notes" />
+
+          <h3>SHOPPING LIST</h3>
+          <ul>
+            <li>2 packs of noodles</li>
+            <li>4 cups broth (chicken/vegetable)</li>
+            <li>12 cloves garlic (minced)</li>
+            <li>1 inch ginger (grated)</li>
+            <li>2 tbsp soy sauce</li>
+            <li>1 tsp sesame oil</li>
+            <li>1 boiled egg, mushrooms, green onions, spinach</li>
+          </ul>
+          <!-- husk at add den rigtige html når fie har oprettet den  -->
+          <a href="productlist"> <button class="shop-button">Shop here</button></a>
+        </div>
+        <button class="arrow"><img src="assets/right-pil.svg" alt="Notes" /></button>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+      <div class="footer-logo">
+        <img class="lille-logo" src="assets/lille-logo.svg" alt="Fresh Cart" />
+      </div>
+      <h3>SIGN UP AND NEVER MISS OUT!</h3>
+      <input type="email" placeholder="Enter email here..." />
+      <button class="subscribe">Subscribe</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#">Contact us or find more inspiration</a>
+        </div>
+        <div class="footer-socials">
+          <a href="mailto:emmu0002@stud.kea.dk">
+            <img src="assets/mail.svg" alt="Email" />
+          </a>
+          <img src="assets/instagram.svg" alt="Instagram" />
+          <img src="assets/facebook.svg" alt="Facebook" />
+        </div>
+      </div>
+      <p>All service websites</p>
+
+      <div class="footer-bottom">
+        <p>How to return a product to Fresh Cart</p>
+        <p>Payments we collect</p>
+        <p>Shipping and cost safety</p>
+        <p>Different for every company</p>
+        <p>All service websites</p>
+        <p>Giftcards for companys</p>
+      </div>
+    </footer>
+  </body>
 </html>

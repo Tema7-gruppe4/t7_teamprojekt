@@ -10,16 +10,112 @@ img {
 }
 
 main {
-  max-width: 70%;
+  max-width: 100%;
   margin: 0 auto;
+  padding: 70px 20px;
+}
+
+h1 {
+  font-family: "Press Start 2P", serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-transform: uppercase;
 }
 
 .productlist_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(2, 1fr); /* 2 kolonner på mobil */
+  gap: 15px;
 }
 .productlist_card {
-  border: solid 1px black;
-  margin: 10px;
+  border: solid 1.5px #3669db;
   border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.img_productlist {
+  position: relative;
+  text-align: center;
+}
+.img_productlist h2 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3669db;
+  font-family: "Press Start 2P", serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+.pris_addtocart {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  max-width: 60%; /* Sikrer, at knappen ikke fylder for meget */
+  padding: 10px;
+  background-color: #fee2fe;
+  border: 1.5px solid #3669db;
+  color: #3669db;
+  text-decoration: none;
+  text-align: center;
+  font-weight: normal;
+  font-size: 0.42rem;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-family: "Press Start 2P", serif;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-family: "Press Start 2P", serif;
+  color: #3669db;
+  font-size: 0.5rem;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.productlist_card p {
+  margin-top: 10px;
+  font-size: 0.6rem;
+  color: #3669db;
+  font-family: "Press Start 2P", serif;
+}
+
+@media (min-width: 800px) {
+  main {
+    max-width: 70%;
+    margin: 0 auto;
+  }
+  .productlist_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  h1 {
+    font-family: "Press Start 2P", serif;
+    margin-top: 150px;
+    margin-bottom: 20px;
+    font-size: 60px;
+    text-transform: uppercase;
+  }
+  .add-to-cart {
+    font-size: 0.55rem;
+  }
+  .price-container {
+    font-size: 0.6rem;
+  }
 }

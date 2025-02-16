@@ -82,6 +82,10 @@ body {
   font-family: "Silkscreen", serif;
   font-size: 0.8rem;
 }
+.inspiration-card li {
+  margin-left: -20px;
+}
+
 .shop-button {
   border-radius: 8px;
   background: white;

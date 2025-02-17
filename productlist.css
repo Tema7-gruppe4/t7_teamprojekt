@@ -37,8 +37,11 @@ h1 {
   gap: 15px;
 }
 .productlist_card {
-  border: solid 1.5px #3669db;
-  border-radius: 8px;
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(assets/dot-emty.svg);
   padding: 22px;
   display: grid;
   grid-template-rows: subgrid;
@@ -79,13 +82,16 @@ h1 {
   max-width: 60%; /* Sikrer, at knappen ikke fylder for meget */
   padding: 10px;
   background-color: #fee2fe;
-  border: 1.5px solid #3669db;
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(assets/dot-emty.svg);
   color: #3669db;
   text-decoration: none;
   text-align: center;
   font-weight: normal;
   font-size: 0.35rem;
-  border-radius: 5px;
   white-space: nowrap;
   font-family: "Press Start 2P", serif;
   text-transform: uppercase;

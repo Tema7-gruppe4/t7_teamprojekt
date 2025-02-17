@@ -33,7 +33,18 @@
   <body>
     <header></header>
     <main>
-      <h1>Produkter</h1>
+      <div class="header_productlist">
+        <h1>Produkter</h1>
+        <div class="filter_productlist">
+          <label for="filter">
+            <select name="filter" id="filter">
+              <option value="all" selected="selected"><img src="assets/filter.svg" alt="filter" />filters</option>
+              <option value="saleLabel">SALE</option>
+              <option value="soldOutLabel">ON STOCK</option>
+            </select>
+          </label>
+        </div>
+      </div>
       <div class="productlist_container">
         <article class="productlist_card">
           <div class="img_productlist">

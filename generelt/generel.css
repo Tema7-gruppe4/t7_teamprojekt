@@ -136,6 +136,25 @@ header {
 
 /* STYLING AF FOOTER */
 /* Newsletter */
+
+#success-message {
+  display: none;
+  color: #f7b4f7;
+  background-color: #f7b4f732;
+  font-weight: bold;
+  margin-top: 10px;
+  font-size: 1rem;
+  font-family: "Press Start 2P", serif;
+  padding: 20px;
+  border-radius: 8px;
+  /* pixeleret effekt på boks */
+  border: 4px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(../assets/dot-emty.svg);
+}
+
 .newsletter {
   padding: 60px;
 }

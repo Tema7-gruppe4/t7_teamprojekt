@@ -24,10 +24,10 @@ body {
 .hero-logo {
   width: 90%;
   max-width: 800px;
-  margin-top: 50px;
+  margin-top: 200px;
 }
 .scroll-down {
-  margin-top: 80px;
+  margin-top: 300px;
   animation: pulse 10s linear infinite;
 }
 

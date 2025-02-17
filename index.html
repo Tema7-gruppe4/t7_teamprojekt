@@ -67,7 +67,12 @@
     </section>
 
     <!-- catergorier til javascript -->
-    <section class="categorylist"></section>
+    <section class="categorylist">
+      <a href="productlist.html?category=groceries">Groceries</a>
+      <a href="productlist.html?category=beauty">Beauty</a>
+      <a href="productlist.html?category=furniture">Furniture</a>
+      <a href="productlist.html?category=fragrances">Fragrances</a>
+    </section>
 
     <!-- Comments Banner -->
     <div class="banner">
@@ -107,8 +112,9 @@
         <img class="lille-logo" src="assets/lille-logo.svg" alt="Fresh Cart" />
       </div>
       <h3 class="sign-up">SIGN UP AND NEVER MISS OUT!</h3>
-      <input type="email" placeholder="Enter email here..." />
-      <button class="subscribe">Subscribe</button>
+      <input type="email" id="email-input" placeholder="Enter email here..." />
+      <button class="subscribe" id="subscribe-btn">Subscribe</button>
+      <p id="success-message"></p>
     </section>
 
     <!-- Footer -->

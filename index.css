@@ -116,37 +116,3 @@ body {
   border: 1px solid #f8f0e7;
   padding: 50px;
 }
-/* Newsletter */
-.newsletter {
-  padding: 60px;
-}
-.newsletter input {
-  padding: 10px;
-  width: 80%;
-  max-width: 250px;
-  margin-bottom: 10px;
-  border: 2px solid black;
-  border-image-slice: 4;
-  border-image-width: 2;
-  border-image-outset: 0;
-  border-image-source: url(assets/dot-emty.svg);
-  filter: grayscale(100%) contrast(100%);
-}
-.subscribe {
-  margin: 10px auto;
-  padding: 10px;
-  color: #3f3f3f;
-  border: none;
-  cursor: pointer;
-  border: 2px solid black;
-  border-image-slice: 4;
-  border-image-width: 2;
-  border-image-outset: 0;
-  border-image-source: url(assets/dot-emty.svg);
-  filter: grayscale(100%) contrast(100%);
-}
-
-.lille-logo {
-  width: 30%;
-  height: auto;
-}

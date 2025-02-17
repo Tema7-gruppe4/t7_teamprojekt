@@ -135,6 +135,46 @@ header {
 }
 
 /* STYLING AF FOOTER */
+/* Newsletter */
+.newsletter {
+  padding: 60px;
+}
+.newsletter input {
+  padding: 10px;
+  width: 80%;
+  max-width: 250px;
+  margin-bottom: 10px;
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(../assets/dot-emty.svg);
+  filter: grayscale(100%) contrast(100%);
+  font-family: "Roboto Mono", serif;
+}
+.sign-up {
+  font-family: "Press Start 2P", serif;
+  font-size: 1rem;
+}
+.subscribe {
+  margin: 10px auto;
+  padding: 10px;
+  color: #3f3f3f;
+  border: none;
+  cursor: pointer;
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(../assets/dot-emty.svg);
+  filter: grayscale(100%) contrast(100%);
+  font-family: "Roboto Mono", serif;
+}
+
+.lille-logo {
+  width: 30%;
+  height: auto;
+}
 /* Footer */
 footer {
   padding: 60px;

@@ -1,3 +1,11 @@
+/* TIL AT LAVE PIXELERET EFFEKT
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(assets/dot-emty.svg);
+*/
+
 /* RESET */
 
 /* FONTS */
@@ -55,10 +63,12 @@ header {
 }
 .header-container p {
   font-weight: bold;
+  font-family: "Silkscreen", serif;
+  color: #3f3f3f;
 }
 .icon {
   width: 24px;
-  height: 24px;
+  height: 45px;
 }
 .search-container {
   position: relative;
@@ -66,11 +76,13 @@ header {
 
 .search-field {
   display: none;
-  padding: 5px;
-  margin-left: 10px;
+  padding: 2px;
+  margin-left: 1px;
   border: 1px solid #3669db;
   border-radius: 4px;
   opacity: 80%;
+  font-family: "Roboto Mono", serif;
+  width: 80px;
 }
 
 .icon {
@@ -100,6 +112,8 @@ header {
 .menu li {
   padding: 30px;
   border-bottom: 1px solid #3669db;
+  font-family: "Silkscreen", serif;
+  color: #3f3f3f;
 }
 
 .menu li:last-child {

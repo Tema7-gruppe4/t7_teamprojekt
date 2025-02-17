@@ -1,4 +1,4 @@
-// BURGER MENU
+// BURGER MENU OG SØGEFELT
 // Hent
 var searchIcon = document.getElementById("search-icon");
 var searchField = document.getElementById("search-field");

@@ -42,8 +42,8 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productlist.html">Shop</a></li>
           <li><a href="#">Cart</a></li>
         </ul>
       </nav>
@@ -52,15 +52,19 @@
       <div class="header_productlist">
         <h1>Produkter</h1>
         <div class="filter_productlist">
-          <label for="filter">
-            <select name="filter" id="filter">
-              <option value="all" selected="selected"><img src="assets/filter.svg" alt="filter" />filters</option>
-              <option value="saleLabel">SALE</option>
-              <option value="soldOutLabel">ON STOCK</option>
-            </select>
+          <label for="filter" class="filter_label">
+            <img src="assets/filter.svg" alt="filter pil" class="filter_icon" />
+            <span class="filter_text">Filters</span>
           </label>
+
+          <select name="filter" id="filter">
+            <option value="all" selected="selected">filters</option>
+            <option value="saleLabel">SALE</option>
+            <option value="soldOutLabel">ON STOCK</option>
+          </select>
         </div>
       </div>
+
       <div class="productlist_container">
         <article class="productlist_card">
           <div class="img_productlist">

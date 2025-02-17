@@ -18,17 +18,53 @@ main {
 .header_productlist {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 .filter_productlist {
   display: flex;
-  align-items: end;
-  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.filter_label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.filter_icon {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.filter_text {
+  color: #3f3f3f;
+  font-family: "Press Start 2P", serif;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+select {
+  appearance: none; /* Fjerner standard-styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Gør select usynlig, men stadig funktionel */
+  cursor: pointer;
 }
 
 h1 {
   font-family: "Press Start 2P", serif;
   font-size: 20px;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .productlist_container {
@@ -72,7 +108,6 @@ h1 {
   display: flex;
   align-items: center;
   gap: 5px;
-  margin-top: 10px;
 }
 .add-to-cart {
   display: flex;
@@ -111,7 +146,6 @@ h1 {
   height: 20px;
 }
 .productlist_card p {
-  margin-top: 10px;
   font-size: 0.4rem;
   font-weight: 100;
   color: #3669db;
@@ -129,9 +163,7 @@ h1 {
   }
   h1 {
     font-family: "Press Start 2P", serif;
-    margin-top: 150px;
-    margin-bottom: 20px;
-    font-size: 60px;
+    font-size: 2.5rem;
     text-transform: uppercase;
   }
   .add-to-cart {
@@ -152,5 +184,8 @@ h1 {
     font-size: 0.8rem;
     font-weight: 100;
     line-height: 1.3rem;
+  }
+  .header_productlist {
+    margin-top: 130px;
   }
 }

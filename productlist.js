@@ -8,7 +8,7 @@ let gemData;
 const filterSelecter = document.querySelector("#filter");
 let filter = "all";
 
-fetch(`https://dummyjson.com/products?category=${category}&limit=50`)
+fetch(`https://dummyjson.com/products?category=${category}&limit=10`)
   .then((response) => response.json())
   .then((dataJSON) => {
     gemData = dataJSON.products; // Brug ".products"

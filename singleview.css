@@ -1,0 +1,362 @@
+/*************** Reset *********************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+/*************** Reset *********************/
+
+/* fonts */
+.press-start-2p-regular {
+  font-family: "Press Start 2P", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-regular {
+  font-family: "Silkscreen", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.silkscreen-bold {
+  font-family: "Silkscreen", serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-mono {
+  font-family: "Roboto Mono", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* kode */
+main {
+  margin-top: 5vw;
+}
+
+.back {
+  font-size: 2cqw;
+  margin-left: 1vw;
+
+  color: var(--text-color);
+  text-decoration: none;
+  font-family: "Roboto Mono", serif;
+  font-weight: 600;
+}
+
+/* image + product name + brand */
+#productView {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.img {
+  /* kun til test */
+  background-color: rgb(180, 178, 178);
+  height: 500px;
+
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.brandView {
+  color: var(--text-color);
+  font-family: "Roboto Mono", serif;
+  font-weight: 600;
+  font-size: 5cqw;
+
+  margin-left: 2vw;
+}
+
+.h1View {
+  font-family: "Press Start 2P", serif;
+  color: var(--text-color);
+  font-size: 7cqw;
+  margin-left: 2vw;
+  padding-bottom: 2vw;
+}
+
+.textOnImage {
+  grid-row: 1;
+  grid-column: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* price */
+.priceView {
+  display: flex;
+}
+
+.coinView {
+  height: 4.9vw;
+  width: 5vw;
+
+  margin: 1vw 1vw 2vw 2vw;
+}
+
+.priceView h2 {
+  margin-top: 2vw;
+  font-family: "Press Start 2P", serif;
+  color: var(--text-color);
+
+  font-size: 4cqw;
+}
+
+.priceView p {
+  font-family: "Roboto Mono", serif;
+  font-size: 2.5cqw;
+  color: #9d9d9d;
+  font-weight: 550;
+
+  margin-top: 2vw;
+}
+
+/* toggle menu */
+.payView {
+  grid-column: 1 / span 2;
+  margin: 3vw auto auto 2vw;
+}
+
+#selectElement {
+  height: 6vw;
+  width: 28vw;
+  background-color: var(--background-color);
+
+  font-family: "Roboto Mono", serif;
+  color: #838383;
+  font-style: italic;
+  font-size: 2cqw;
+
+  border: 0.5px solid var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#selectElement:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.payView button {
+  background-color: #39393900;
+  border: none;
+
+  font-family: "Press Start 2P", serif;
+  font-size: 1.5cqw;
+  color: var(--primary-color);
+
+  background-image: url(assets/knap.svg);
+  background-repeat: no-repeat;
+  width: 21vw;
+  height: 7vw;
+
+  cursor: pointer;
+}
+
+/* in stock / sold out */
+#inStock p {
+  color: var(--primary-color);
+  font-family: "Roboto Mono", serif;
+}
+
+#inStock {
+  margin: 1vw auto 5vw 2vw;
+}
+
+#inStock p:first-of-type {
+  background-image: url(assets/dot-filled.svg);
+  background-repeat: no-repeat;
+  padding-left: 3vw;
+  background-position: left;
+}
+
+#inStock p:last-of-type {
+  background-image: url(assets/dot-emty.svg);
+  background-repeat: no-repeat;
+  padding-left: 3vw;
+  background-position: left;
+
+  display: none;
+}
+
+/* additional info */
+.line {
+  border-bottom: 1px solid var(--text-color);
+  padding-bottom: 1.5vw;
+  margin: auto 2vw auto 2vw;
+}
+
+#collapsible {
+  cursor: pointer;
+  background-color: var(--background-color);
+  border: none;
+  font-size: 4cqw;
+
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+  font-weight: 600;
+
+  width: 100%;
+  text-align: left;
+}
+
+#content p {
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+}
+
+#content {
+  display: none;
+  margin-top: 2vw;
+}
+
+.info {
+  display: flex;
+}
+
+#viewMore {
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+  text-align: right;
+  font-weight: 600;
+  font-size: 4cqw;
+}
+
+#viewLess {
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+  text-align: right;
+  font-weight: 600;
+  font-size: 4cqw;
+
+  visibility: hidden;
+}
+
+/* costumer reviews */
+h3 {
+  margin-top: 20vw;
+  margin-left: 2vw;
+
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+}
+
+#commentsView {
+  border: 2px solid var(--text-color);
+  margin: 0.5vw 2vw 10vw 2vw;
+  border-radius: 5px;
+
+  padding: 0.5vw;
+}
+
+.line:last-of-type {
+  border-bottom: none;
+}
+
+.costumerName {
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+  font-size: 2.7cqw;
+  font-style: italic;
+  font-weight: 600;
+
+  margin-top: 2vw;
+}
+
+.commentDAte {
+  font-family: "Roboto Mono", serif;
+  color: #838383;
+  font-size: 2cqw;
+
+  margin-bottom: 1.5vw;
+}
+
+.comment {
+  font-family: "Roboto Mono", serif;
+  color: var(--text-color);
+  font-size: 3cqw;
+  font-style: italic;
+
+  margin-bottom: 2vw;
+}
+
+/* sold out */
+#soldOut {
+  color: var(--text-color);
+  background-image: url(assets/knap-soldout.svg);
+}
+
+/* sale */
+#nowPrice {
+  margin-left: 2vw;
+  margin-bottom: 2vw;
+  font-family: "Press Start 2P", serif;
+  color: var(--primary-color);
+
+  font-size: 4cqw;
+  grid-column: 1;
+
+  visibility: hidden;
+}
+
+#onSalePrice {
+  color: #838383;
+  font-size: 3cqw;
+}
+
+#onSaleCoin {
+  height: 3.5vw;
+  width: 3vw;
+
+  margin: 1.5vw 1vw 2vw 2vw;
+}
+
+#onSale {
+  margin-right: 2vw;
+  margin-bottom: 2vw;
+  margin-top: -3vw;
+  font-family: "Press Start 2P", serif;
+  color: var(--primary-color);
+  text-align: center;
+
+  grid-column: 2;
+
+  background-color: var(--secondary-color);
+  border-right: 4px solid var(--primary-color);
+  border-bottom: 4px solid var(--primary-color);
+
+  padding: 2.5vw;
+  font-size: 3.5cqw;
+}
+
+#onSaleLabel {
+  grid-column: 2;
+  grid-row: 1;
+
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+
+  height: 5vw;
+
+  visibility: hidden;
+}
+
+/* show / hide */
+.show {
+  visibility: visible;
+}
+
+.hide {
+  visibility: hidden;
+}

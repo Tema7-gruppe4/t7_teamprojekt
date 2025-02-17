@@ -1,0 +1,191 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 60px 50px;
+}
+
+.header_productlist {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.filter_productlist {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+}
+.filter_label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+.filter_icon {
+  width: 25px;
+  height: auto;
+  cursor: pointer;
+}
+.filter_text {
+  color: #3f3f3f;
+  font-family: "Press Start 2P", serif;
+  font-size: 0.5rem;
+  cursor: pointer;
+}
+select {
+  appearance: none; /* Fjerner standard-styling */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0; /* Gør select usynlig, men stadig funktionel */
+  cursor: pointer;
+}
+
+h1 {
+  font-family: "Press Start 2P", serif;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.productlist_container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+}
+.productlist_card {
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(assets/dot-emty.svg);
+  padding: 22px;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+}
+.img_productlist {
+  position: relative;
+  text-align: center;
+  background-color: rgb(233, 227, 227);
+}
+.img_productlist h2 {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #3669db;
+  font-family: "Press Start 2P", serif;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.4rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  line-height: 0.5rem;
+  max-width: 90%;
+  width: 100%;
+}
+.pris_addtocart {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  max-width: 60%; /* Sikrer, at knappen ikke fylder for meget */
+  padding: 10px;
+  background-color: #fee2fe;
+  border: 2px solid black;
+  border-image-slice: 4;
+  border-image-width: 2;
+  border-image-outset: 0;
+  border-image-source: url(assets/dot-emty.svg);
+  color: #3669db;
+  text-decoration: none;
+  text-align: center;
+  font-weight: normal;
+  font-size: 0.35rem;
+  white-space: nowrap;
+  font-family: "Press Start 2P", serif;
+  text-transform: uppercase;
+}
+
+.price-container {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-family: "Press Start 2P", serif;
+  color: #3669db;
+  font-size: 0.4rem;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+}
+.productlist_card p {
+  font-size: 0.4rem;
+  font-weight: 100;
+  color: #3669db;
+  font-family: "Press Start 2P", serif;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 800px) {
+  main {
+    max-width: 100%;
+    margin: 0 100px;
+  }
+  .productlist_container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  h1 {
+    font-family: "Press Start 2P", serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+  }
+  .add-to-cart {
+    font-size: 0.8rem;
+    width: 70%;
+    max-width: 70%;
+  }
+  .price-container {
+    font-size: 0.8rem;
+  }
+  .productlist_card p {
+    font-size: 0.6rem;
+  }
+  .pris_addtocart {
+    gap: 10px;
+  }
+  .img_productlist h2 {
+    font-size: 0.8rem;
+    font-weight: 100;
+    line-height: 1.3rem;
+  }
+  .header_productlist {
+    margin-top: 130px;
+  }
+}

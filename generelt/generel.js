@@ -16,3 +16,7 @@ document.addEventListener("click", function (event) {
     searchField.classList.remove("active");
   }
 });
+function toggleMenu() {
+  const menu = document.querySelector(".menu");
+  menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}

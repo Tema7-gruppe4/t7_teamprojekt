@@ -62,7 +62,7 @@ body {
 .categorylist {
   /* Placerer knapperne oven på billedet */
   position: absolute;
-  top: 128.5%;
+  top: 126.5%;
   left: 51%;
   transform: translate(-50%, -50%);
   display: grid;
@@ -242,7 +242,9 @@ body {
   }
 
   .shop-button {
+    position: relative;
     margin: 15px auto;
+    margin-top: 90px;
   }
 
   /* Banner */
@@ -267,6 +269,7 @@ body {
   }
 
   .inspiration-card {
-    height: 500px;
+    height: 450px;
+    width: 300px;
   }
 }

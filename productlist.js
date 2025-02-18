@@ -8,7 +8,7 @@ let gemData;
 const filterSelecter = document.querySelector("#filter");
 let filter = "all";
 
-fetch(`https://dummyjson.com/products?category=${category}&limit=10`)
+fetch(`https://dummyjson.com/products?category=${category}&limit=55`)
   .then((response) => response.json())
   .then((dataJSON) => {
     gemData = dataJSON.products; // Brug ".products"
@@ -20,9 +20,9 @@ function showList(data) {
     if (filter === "all") {
       return true;
     } else if (filter === "saleLabel") {
-      return product.discount; // Hvis rabat eksisterer
-    } else if (filter == "soldOutLabel") {
-      return !product.soldOut; // Rigtig stavning af soldOut
+      return product.discountPercentage; // Hvis rabat eksisterer
+    } else if (filter === "soldOutLabel") {
+      return product.availabilityStatus === "Sold Out"; // Rigtig stavning af soldOut
     }
   });
 
@@ -33,18 +33,25 @@ function showList(data) {
           <div class="img_productlist">
             <h2>${product.title}</h2>
             <a href="product.html">
-              <img src="${product.thumbnail}" alt="${product.title}" />
-            </a>
+              <img src="${product.thumbnail}"      
+              alt="${product.productdisplayname}" 
+            style="${product.availabilityStatus === "Sold Out" ? "opacity: 0.4;" : ""}" />
+           
+            <!-- UDSOLGT Label -->
+       <span class="saleLabel ${product.discountPercentage && "saleOn_img"}">sale : ${product.discountPercentage} % </span>
+<span class="soldOutLabel ${product.availabilityStatus === "Sold Out" ? "soldOut_img" : ""}">Sold out</span>
           </div>
-
+           </a>
           <div class="pris_addtocart">
-            <a href="#" class="add-to-cart">add to cart</a>
+            
             <div class="price-container">
+            <a href="#" class="add-to-cart">add to cart</a>
               <img class="icon" src="assets/coin.svg" alt="Ikon" />
-              <span class="price">${Math.round(product.price)} </span>
+               ${product.discountPercentage ? `<span class="dashed">${Math.round(product.price)}</span> <span class="new-price">${Math.round(product.price * (1 - product.discountPercentage / 100))}</span>` : `${Math.round(product.price)}`}
             </div>
+            
           </div>
-          <p>Category: ${product.category}</p>
+           <p class="product-category">Category: ${product.category}</p>
         </article>
       `
     )

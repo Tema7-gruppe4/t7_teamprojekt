@@ -40,7 +40,7 @@ img {
 
 /* kode */
 main {
-  margin-top: 5vw;
+  margin-top: 3vw;
 }
 
 .back {
@@ -54,18 +54,17 @@ main {
 }
 
 /* image + product name + brand */
-#productView {
+.productView {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.img {
-  /* kun til test */
-  background-color: rgb(180, 178, 178);
-  height: 500px;
-
+#imageView {
   grid-column: 1 / span 2;
   grid-row: 1;
+
+  object-fit: cover;
+  height: 500px;
 }
 
 .brandView {
@@ -162,32 +161,6 @@ main {
   height: 7vw;
 
   cursor: pointer;
-}
-
-/* in stock / sold out */
-#inStock p {
-  color: var(--primary-color);
-  font-family: "Roboto Mono", serif;
-}
-
-#inStock {
-  margin: 1vw auto 5vw 2vw;
-}
-
-#inStock p:first-of-type {
-  background-image: url(assets/dot-filled.svg);
-  background-repeat: no-repeat;
-  padding-left: 3vw;
-  background-position: left;
-}
-
-#inStock p:last-of-type {
-  background-image: url(assets/dot-emty.svg);
-  background-repeat: no-repeat;
-  padding-left: 3vw;
-  background-position: left;
-
-  display: none;
 }
 
 /* additional info */
@@ -297,6 +270,34 @@ h3 {
   background-image: url(assets/knap-soldout.svg);
 }
 
+/* in stock / sold out */
+#inStock p {
+  color: var(--primary-color);
+  font-family: "Roboto Mono", serif;
+}
+
+#inStock {
+  margin: 1vw auto 5vw 2vw;
+}
+
+#inStock p:first-of-type {
+  background-image: url(assets/dot-filled.svg);
+  background-repeat: no-repeat;
+  padding-left: 3vw;
+  background-position: left;
+
+  /* display: none; */
+}
+
+#inStock p:last-of-type {
+  background-image: url(assets/dot-emty.svg);
+  background-repeat: no-repeat;
+  padding-left: 3vw;
+  background-position: left;
+
+  display: none;
+}
+
 /* sale */
 #nowPrice {
   margin-left: 2vw;
@@ -350,6 +351,219 @@ h3 {
   height: 5vw;
 
   visibility: hidden;
+}
+
+/* desktop */
+@media (min-width: 600px) {
+  /* kode */
+  main {
+    margin: 5vw 7vw auto 7vw;
+  }
+
+  .back {
+    font-size: 1cqw;
+    margin-left: auto;
+  }
+
+  /* image + product name + brand */
+  #productView {
+    grid-template-columns: 5fr 1fr;
+    margin-top: 3vw;
+  }
+
+  #imageView {
+    grid-column: 2;
+    grid-row: 1 / span 6;
+
+    object-fit: contain;
+    height: 600px;
+  }
+
+  .brandView {
+    font-size: 2cqw;
+    margin-left: 0vw;
+  }
+
+  .h1View {
+    font-size: 5cqw;
+    margin-left: 0vw;
+    padding-bottom: 2vw;
+  }
+
+  .textOnImage {
+    justify-content: flex-start;
+  }
+
+  /* price */
+  .priceView {
+    grid-row: 2;
+  }
+
+  .coinView {
+    height: 3vw;
+    width: 3vw;
+
+    margin: 0vw 1vw 0vw 0vw;
+  }
+
+  .priceView h2 {
+    margin-top: 1vw;
+    font-size: 2cqw;
+  }
+
+  .priceView p {
+    font-size: 1cqw;
+    margin-top: 1.4vw;
+    margin-left: 1vw;
+  }
+
+  /* toggle menu */
+  .payView {
+    grid-column: 1 / span 1;
+    grid-row: 4;
+    margin: 4vw auto auto 0vw;
+  }
+
+  #selectElement {
+    height: 4vw;
+    width: 25vw;
+    font-size: 1cqw;
+
+    padding: 0.5vw;
+  }
+
+  .payView button {
+    font-size: 0.8cqw;
+    background-image: url(assets/knap.svg);
+    width: 12vw;
+    height: 4vw;
+
+    margin-left: 1vw;
+  }
+
+  /* in stock / sold out */
+  #inStock p {
+    font-size: 1cqw;
+  }
+
+  #inStock {
+    margin: 0vw auto 5vw 0vw;
+    grid-row: 5;
+  }
+
+  #inStock p:first-of-type {
+    padding-left: 1.5vw;
+    background-position: left;
+  }
+
+  #inStock p:last-of-type {
+    padding-left: 1.5vw;
+    background-position: left;
+
+    /* display: none; */
+  }
+
+  /* additional info */
+  .line {
+    margin: -5vw auto auto 0vw;
+
+    width: 45%;
+  }
+
+  #collapsible {
+    font-size: 1cqw;
+
+    width: 100%;
+    text-align: left;
+  }
+
+  #viewMore {
+    font-size: 1cqw;
+  }
+
+  #viewLess {
+    font-size: 1cqw;
+  }
+
+  /* costumer reviews */
+  h3 {
+    margin-top: 15vw;
+    margin-left: 0vw;
+  }
+
+  #commentsView {
+    border: none;
+    margin: 0.5vw auto 10vw auto;
+    border-radius: 5px;
+
+    padding: 0vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5vw;
+  }
+
+  .lineDesktop {
+    border: 1px solid var(--text-color);
+    width: 100%;
+    margin: 0vw;
+    padding: 1vw;
+    border-radius: 5px;
+  }
+
+  .lineDesktop:last-of-type {
+    border-bottom: 1px solid var(--text-color);
+  }
+
+  .costumerName {
+    font-size: 1cqw;
+    margin-top: 1vw;
+  }
+
+  .commentDAte {
+    font-size: 0.7cqw;
+    margin-bottom: 1.5vw;
+  }
+
+  .comment {
+    font-size: 1cqw;
+    margin-bottom: 1vw;
+  }
+
+  /* sale */
+  #nowPrice {
+    margin-left: 0vw;
+    margin-top: 1vw;
+
+    font-size: 2cqw;
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  #onSalePrice {
+    font-size: 2cqw;
+  }
+
+  #onSaleCoin {
+    height: 2vw;
+    width: 2vw;
+    margin: auto 1vw auto 0vw;
+  }
+
+  #onSale {
+    margin-right: 2vw;
+    margin-bottom: 2vw;
+    margin-top: -1vw;
+
+    text-align: center;
+
+    padding: 1.5vw;
+    font-size: 2cqw;
+  }
+
+  #onSaleLabel {
+    grid-template-columns: 1.5fr 1fr;
+    height: 5vw;
+  }
 }
 
 /* show / hide */

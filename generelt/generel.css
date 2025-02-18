@@ -110,7 +110,7 @@ header {
 }
 
 .menu li {
-  padding: 30px;
+  padding: 20px;
   border-bottom: 1px solid #3669db;
   font-family: "Silkscreen", serif;
   color: #3f3f3f;
@@ -124,7 +124,7 @@ header {
   text-decoration: none;
   color: black;
   display: block;
-  font-size: 1.2rem;
+  font-size: 1rem;
   text-align: center;
 }
 

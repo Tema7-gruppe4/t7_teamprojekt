@@ -62,8 +62,8 @@ body {
 .categorylist {
   /* Placerer knapperne oven på billedet */
   position: absolute;
-  top: 127%;
-  left: 50%;
+  top: 128.5%;
+  left: 51%;
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -235,7 +235,6 @@ body {
 
   .inspiration-container {
     display: flex;
-    justify-content: space-between;
   }
 
   .inspiration-card li {
@@ -257,6 +256,9 @@ body {
   }
 
   .arrow {
-    padding: 80px;
+    color: #3669db;
+    background-color: #f8f0e7;
+    border: 1px solid #f8f0e7;
+    padding: 10px;
   }
 }

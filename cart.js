@@ -1,10 +1,10 @@
 // Når siden er indlæst, kører denne funktion
 document.addEventListener("DOMContentLoaded", () => {
-  const cartContainer = document.querySelector(".cart-items");
-  const receiptDetails = document.querySelector("#receipt-details");
-  const checkoutBtn = document.querySelector("#checkout");
+  const cartContainer = document.querySelector(".cart-items"); // Hvor produkterne vises
+  const receiptDetails = document.querySelector("#receipt-details"); // Kvitteringssektion
+  const checkoutBtn = document.querySelector("#checkout"); // "Pay Now"-knap
 
-  // Henter kurven fra localStorage
+  // Henter kurven fra localStorage eller laver en tom array, hvis ingen produkter findes
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   // Opdaterer UI
@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (cart.length === 0) {
       cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-      receiptDetails.innerHTML = "<p>No items in receipt</p>";
       return;
     }
 
@@ -23,19 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
       cartItem.classList.add("cart-item");
 
       cartItem.innerHTML = `
-          <h3>${item.name}</h3>
-          <img src="${item.image}" alt="${item.name}">
-          <p class="price-container">
-              <img src="assets/coin.svg" alt="Coin">
-              ${item.price.toFixed(2)}
-          </p>
-          <div class="quantity-controls">
-              <button class="decrease-qty" data-index="${index}">-</button>
-              <span class="quantity">${item.quantity}</span>
-              <button class="increase-qty" data-index="${index}">+</button>
-          </div>
-          <button class="remove-item" data-index="${index}">X</button>
-        `;
+            <h3>${item.name}</h3>
+            <img src="${item.image}" alt="${item.name}">
+            <p class="price-container">
+                <img src="assets/coin.svg" alt="Coin"> ${item.price.toFixed(2)}
+            </p>
+            <div class="quantity-controls">
+                <button class="decrease-qty" data-index="${index}">-</button>
+                <span class="quantity">${item.quantity}</span>
+                <button class="increase-qty" data-index="${index}">+</button>
+            </div>
+            <button class="remove-item" data-index="${index}">X</button>
+          `;
 
       cartContainer.appendChild(cartItem);
     });
@@ -87,26 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Genererer kvitteringsindhold
-    receiptDetails.innerHTML =
-      cart
-        .map(
-          (item) => `
-            <p class="price-container">
-              <img src="assets/coin.svg" alt="Coin">
-              ${item.quantity} x ${item.name} - ${(item.price * item.quantity).toFixed(2)}
-            </p>
-          `
-        )
-        .join("") +
-      `
-          <hr>
-          <p class="price-container">
-            <img src="assets/coin.svg" alt="Coin">
-            <strong>${cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</strong>
-          </p>
-          <p>Thanks for shopping at Fresh Cart!</p>
-        `;
+    // Genererer kvitteringsindhold med det rigtige layout
+    receiptDetails.innerHTML = `
+        ${cart
+          .map(
+            (item) => `
+          <p>${item.quantity} X ${item.name} <span class="receipt-price">${item.price.toFixed(2)}</span></p>
+        `
+          )
+          .join("")}
+        <hr>
+        <p>TOTAL <span class="receipt-price">${cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</span></p>
+      `;
 
     localStorage.removeItem("cart");
     cart = [];

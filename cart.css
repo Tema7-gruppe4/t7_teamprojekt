@@ -31,17 +31,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .cart-item img {
-  width: 20px;
-  margin-right: 5px;
+  width: 40px;
+  margin-right: 10px;
 }
 
 .price-container {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -63,18 +64,18 @@
 .remove-item {
   background: none;
   border: none;
-  font-size: 11px;
+  font-size: 14px;
   cursor: pointer;
   color: black;
+  font-weight: bold;
 }
 
 /* Kvittering */
 .receipt {
   position: relative;
-  width: 100%;
-  max-width: 250px;
+  width: 280px;
+  margin: auto;
   text-align: center;
-  margin-top: 20px;
 }
 
 .receipt-bg {
@@ -84,25 +85,54 @@
 
 .receipt-content {
   position: absolute;
-  top: 20%;
+  top: 12%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 80%;
-  font-size: 12px;
-  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+  text-align: left;
   color: black;
-  font-family: "Press Start 2P", sans-serif;
+}
+
+.receipt-content h2 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .receipt-content p {
-  margin: 5px 0;
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+  font-size: 10px;
+  font-weight: bold;
 }
 
+.receipt-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Fjern linjerne */
+.receipt-content hr {
+  display: none;
+}
+
+/* Fjern møntikon fra kvitteringen */
+.receipt-content .price-container img {
+  display: none;
+}
+
+/* PAY NOW-knap */
 #checkout {
   background-image: url("assets/pixel-knap.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  width: 120px;
+  width: 130px;
   height: 50px;
   border: none;
   display: flex;
@@ -116,6 +146,7 @@
   margin: 20px auto;
 }
 
+/* Desktop Layout */
 @media (min-width: 800px) {
   .cart-container {
     max-width: 900px;
@@ -139,6 +170,6 @@
   }
 
   .receipt-content {
-    font-size: 14px;
+    font-size: 12px;
   }
 }

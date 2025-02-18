@@ -1,19 +1,39 @@
 // Når siden er indlæst, kører denne funktion
 document.addEventListener("DOMContentLoaded", () => {
-  const cartContainer = document.querySelector(".cart-items"); // Hvor produkterne vises
-  const receiptDetails = document.querySelector("#receipt-details"); // Kvitteringssektion
-  const checkoutBtn = document.querySelector("#checkout"); // "Pay Now"-knap
+  // Henter HTML-elementer
+  const cartContainer = document.querySelector(".cart-items");
+  const receiptDetails = document.querySelector("#receipt-details");
+  const checkoutBtn = document.querySelector("#checkout");
 
-  // Henter kurven fra localStorage eller laver en tom array, hvis ingen produkter findes
+  // Henter kurven fra localStorage, eller opretter en med et statisk produkt
   let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-  // Opdaterer UI
+  if (cart.length === 0) {
+    cart = [
+      {
+        name: "Kiwi",
+        price: 10.0,
+        quantity: 2,
+        image: "assets/kiwi.jpg",
+      },
+      {
+        name: "Lipstick",
+        price: 25.0,
+        quantity: 1,
+        image: "assets/lipstick.jpg",
+      },
+    ];
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  // Funktion til at opdatere kurvens UI
   function updateCartUI() {
     cartContainer.innerHTML = "";
     receiptDetails.innerHTML = "";
 
     if (cart.length === 0) {
       cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+      receiptDetails.innerHTML = "<p>No items in receipt</p>";
       return;
     }
 
@@ -25,7 +45,8 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${item.name}</h3>
             <img src="${item.image}" alt="${item.name}">
             <p class="price-container">
-                <img src="assets/coin.svg" alt="Coin"> ${item.price.toFixed(2)}
+                <img src="assets/coin.svg" alt="Coin">
+                ${item.price.toFixed(2)}
             </p>
             <div class="quantity-controls">
                 <button class="decrease-qty" data-index="${index}">-</button>
@@ -72,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Gemmer kurven og opdaterer UI
+  // Funktion til at gemme kurven og opdatere UI
   function saveAndUpdate() {
     localStorage.setItem("cart", JSON.stringify(cart));
     updateCartUI();
@@ -85,19 +106,28 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    // Genererer kvitteringsindhold med det rigtige layout
-    receiptDetails.innerHTML = `
-        ${cart
-          .map(
-            (item) => `
-          <p>${item.quantity} X ${item.name} <span class="receipt-price">${item.price.toFixed(2)}</span></p>
-        `
-          )
-          .join("")}
-        <hr>
-        <p>TOTAL <span class="receipt-price">${cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</span></p>
-      `;
+    // Genererer kvitteringsindhold
+    receiptDetails.innerHTML =
+      cart
+        .map(
+          (item) => `
+              <p class="price-container">
+                <img src="assets/coin.svg" alt="Coin">
+                ${item.quantity} x ${item.name} - ${(item.price * item.quantity).toFixed(2)}
+              </p>
+            `
+        )
+        .join("") +
+      `
+            <hr>
+            <p class="price-container">
+              <img src="assets/coin.svg" alt="Coin">
+              <strong>${cart.reduce((acc, item) => acc + item.price * item.quantity, 0).toFixed(2)}</strong>
+            </p>
+            <p>Thanks for shopping at Fresh Cart!</p>
+          `;
 
+    // Tømmer kurven efter betaling
     localStorage.removeItem("cart");
     cart = [];
     updateCartUI();

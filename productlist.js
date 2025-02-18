@@ -32,7 +32,7 @@ function showList(data) {
       <article class="productlist_card">
           <div class="img_productlist">
             <h2>${product.title}</h2>
-            <a href="product.html">
+            <a href="singleview.html?id=${product.id}">
               <img src="${product.thumbnail}"      
               alt="${product.productdisplayname}" 
             style="${product.availabilityStatus === "Sold Out" ? "opacity: 0.4;" : ""}" />

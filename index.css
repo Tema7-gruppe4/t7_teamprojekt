@@ -49,6 +49,15 @@ body {
   display: block;
 }
 
+/* spil */
+.cart {
+  position: absolute;
+  top: 126%; /* Start position for Y */
+  left: 25%; /* Start position for X (venstre) */
+  transform: translate(-50%, -50%);
+  transition: left 1s ease-in-out; /* Animation til at flytte vogn */
+}
+
 /* categories */
 .categorylist {
   /* Placerer knapperne oven på billedet */
@@ -162,4 +171,92 @@ body {
   background-color: #f8f0e7;
   border: 1px solid #f8f0e7;
   padding: 50px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  /* Hero Section */
+  .hero {
+    height: 70vh;
+    justify-content: flex-start;
+    margin-top: 100px;
+  }
+
+  .hero-logo {
+    width: 50%;
+    max-width: 1000px;
+    margin-top: 0;
+  }
+
+  .scroll-down {
+    margin-top: 50px;
+  }
+
+  /* Arcade Section */
+  .arcade {
+    margin: 50px 0;
+    padding: 80px;
+  }
+
+  .arcade-machine img {
+    width: 75%;
+    place-self: center;
+  }
+
+  /* Spil */
+  .cart {
+    top: 145%; /* Juster Y-position */
+    left: 37%; /* Flyt indkøbsvognen til venstre */
+  }
+
+  /* Categories */
+  .categorylist {
+    padding: auto;
+    top: 145%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 43%;
+    width: 30%;
+  }
+
+  .categorylist a {
+    font-size: 0.8rem; /* Øg fontstørrelsen */
+    padding: 5px;
+  }
+
+  /* Weekly Inspiration */
+  .inspiration-card {
+    width: 15%; /* Gør kortene mindre på desktop */
+    margin: 10px;
+    height: 100%;
+  }
+
+  .inspiration-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .inspiration-card li {
+    margin-left: 0;
+  }
+
+  .shop-button {
+    margin: 15px auto;
+  }
+
+  /* Banner */
+  .banner {
+    margin: 30px;
+    padding: 20px;
+  }
+
+  .banner-text {
+    animation: scrollText 30s linear infinite;
+  }
+
+  .arrow {
+    padding: 80px;
+  }
 }

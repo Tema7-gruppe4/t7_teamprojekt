@@ -101,6 +101,7 @@ header {
   right: 20px;
   width: 200px;
   border-radius: 5px;
+  background-color: #3669db;
 }
 
 .menu ul {
@@ -111,7 +112,7 @@ header {
 
 .menu li {
   padding: 20px;
-  border-bottom: 1px solid #3669db;
+  border-bottom: 1px solid #f8f0e7;
   font-family: "Silkscreen", serif;
   color: #3f3f3f;
 }
@@ -234,4 +235,48 @@ footer {
 .footer-socials img {
   width: 60px;
   height: auto;
+}
+/* Desktop */
+@media (min-width: 1024px) {
+  /* STYLING AF FOOTER */
+  /* Newsletter */
+  .footer-socials img {
+    position: relative;
+    width: 20%;
+    height: auto;
+  }
+  .footer-socials {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .lille-logo {
+    width: 15%;
+    height: auto;
+  }
+
+  #success-message {
+    width: 25%;
+    display: none;
+    color: #f7b4f7;
+    background-color: #f7b4f732;
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 1rem;
+    font-family: "Press Start 2P", serif;
+    padding: 20px;
+    border-radius: 8px;
+    /* pixeleret effekt på boks */
+    border: 4px solid black;
+    border-image-slice: 4;
+    border-image-width: 2;
+    border-image-outset: 0;
+    border-image-source: url(../assets/dot-emty.svg);
+  }
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: start;
+    align-items: center;
+  }
 }

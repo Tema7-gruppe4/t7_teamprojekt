@@ -354,7 +354,7 @@ h3 {
 }
 
 /* desktop */
-@media (min-width: 600px) {
+@media (min-width: 700px) {
   /* kode */
   main {
     margin: 5vw 7vw auto 7vw;
@@ -376,7 +376,7 @@ h3 {
     grid-row: 1 / span 6;
 
     object-fit: contain;
-    height: 600px;
+    height: 80%;
   }
 
   .brandView {
@@ -447,7 +447,7 @@ h3 {
   }
 
   #inStock {
-    margin: 0vw auto 5vw 0vw;
+    margin: 1vw auto 5vw 0vw;
     grid-row: 5;
   }
 
@@ -459,13 +459,11 @@ h3 {
   #inStock p:last-of-type {
     padding-left: 1.5vw;
     background-position: left;
-
-    /* display: none; */
   }
 
   /* additional info */
   .line {
-    margin: -5vw auto auto 0vw;
+    margin: -13.5vw auto auto 0vw;
 
     width: 45%;
   }

@@ -295,7 +295,7 @@ h3 {
   padding-left: 3vw;
   background-position: left;
 
-  display: none;
+  /* display: none; */
 }
 
 /* sale */
@@ -571,4 +571,12 @@ h3 {
 
 .hide {
   visibility: hidden;
+}
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
 }

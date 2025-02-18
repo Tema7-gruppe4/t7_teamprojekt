@@ -261,4 +261,12 @@ body {
     border: 1px solid #f8f0e7;
     padding: 10px;
   }
+  .inspiration-container {
+    flex-direction: row; /* Desktop: kortene står ved siden af hinanden */
+    justify-content: center;
+  }
+
+  .inspiration-card {
+    height: 500px;
+  }
 }

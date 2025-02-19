@@ -110,25 +110,35 @@ function showComments(comments) {
   commentsViewContainer.innerHTML = markup;
 }
 
-// EVENT LISTENER FOR "Add to bag" KNAP
- document.querySelector(".addToCart").addEventListener("click", function (event) {
+// EVENT LISTENER FOR "Add to bag" BUTTON
+document.querySelector(".addToCart").addEventListener("click", function (event) {
   event.preventDefault(); 
-  // Forhindrer formularen i at blive sendt
+  // Prevents the form from being submitted
 
-  // Gemmer produktdata i localStorage
-  localStorage.setItem(
-    "productInBag",
-    JSON.stringify({
-      id: data.id,
-      name: data.productdisplayname,
-      price: finalPrice,
-      size: document.getElementById("size").value, // Får størrelsen fra dropdown
-      image: https://https://cdn.dummyjson.com/products/images/${category}/${title}/thumbnail.png,
+  fetch(`https://dummyjson.com/products/${ProductId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Data from the API
+      const finalPrice = /* Calculate or retrieve final price based on data */;
+      const category = data.category;
+      const title = data.title;
+
+      // Stores product data in localStorage
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.push({
+        id: data.id,
+        name: data.title,
+        price: finalPrice,
+        size: document.getElementById("size").value, // Gets size from dropdown
+        image: `https://i.dummyjson.com/data/products/${data.id}/thumbnail.jpg`, // Corrected image URL
+
+      });
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // Redirects user to cart.html
+      window.location.href = "cart.html";
     })
-  );
-
-  // Sender brugeren til bag.html
-  window.location.href = "cart.html";
+    .catch((error) => {
+      console.error("Fetch error:", error);
+    });
 });
-
-.catch((error) => {console.error("Fetch error:", error);});

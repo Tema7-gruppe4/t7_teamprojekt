@@ -5,39 +5,20 @@ document.addEventListener("DOMContentLoaded", () => {
   const receiptDetails = document.querySelector("#receipt-details"); // Her vises kvitteringen
   const checkoutBtn = document.querySelector("#checkout"); // "PAY NOW"-knappen
 
-  // Henter kurven fra localStorage, hvis den findes – ellers laver den en med et par testprodukter
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  // Henter produktdata fra localStorage
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
   if (cart.length === 0) {
-    // Tilføjer statiske testprodukter, hvis kurven er tom
-    cart = [
-      {
-        name: "Kiwi",
-        price: 10.0,
-        quantity: 2,
-        image: "assets/kiwi.jpg",
-      },
-      {
-        name: "Lipstick",
-        price: 25.0,
-        quantity: 1,
-        image: "assets/lipstick.jpg",
-      },
-    ];
-    localStorage.setItem("cart", JSON.stringify(cart)); // Gemmer testprodukterne i localStorage
+    console.log("No products in cart.");
+    cartContainer.innerHTML = "<p>Your cart is empty.</p>";
+    receiptDetails.innerHTML = "<p>No items in receipt</p>";
+    return;
   }
 
   // Funktion til at opdatere UI med produkter i kurven
   function updateCartUI() {
     cartContainer.innerHTML = ""; // Rydder kurven i HTML
     receiptDetails.innerHTML = ""; // Rydder kvitteringen i HTML
-
-    // Hvis kurven er tom, vis en besked og stop her
-    if (cart.length === 0) {
-      cartContainer.innerHTML = "<p>Your cart is empty.</p>";
-      receiptDetails.innerHTML = "<p>No items in receipt</p>";
-      return;
-    }
 
     // Gennemgår alle produkter i kurven og tilføjer dem til HTML
     cart.forEach((item, index) => {

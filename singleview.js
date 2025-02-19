@@ -110,30 +110,42 @@ function showComments(comments) {
   commentsViewContainer.innerHTML = markup;
 }
 
+// Initialize clickCount
+let clickCount = 1;
+
 // EVENT LISTENER FOR "Add to bag" BUTTON
 document.querySelector(".addToCart").addEventListener("click", function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
   // Prevents the form from being submitted
 
   fetch(`https://dummyjson.com/products/${ProductId}`)
     .then((response) => response.json())
     .then((data) => {
       // Data from the API
-      const finalPrice = /* Calculate or retrieve final price based on data */;
+      const finalPrice = data.price * clickCount; // clickCount is always 1 in this case
       const category = data.category;
       const title = data.title;
 
       // Stores product data in localStorage
       const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      cart.push({
-        id: data.id,
-        name: data.title,
-        price: finalPrice,
-        size: document.getElementById("size").value, // Gets size from dropdown
-        image: `https://i.dummyjson.com/data/products/${data.id}/thumbnail.jpg`, // Corrected image URL
+      const existingItem = cart.find((item) => item.id === data.id);
 
-      });
+      if (existingItem) {
+        existingItem.quantity += 1;
+        existingItem.price += data.price;
+      } else {
+        cart.push({
+          id: data.id,
+          name: title,
+          price: finalPrice,
+          quantity: 1, // Always adding 1 item
+          size: document.getElementById("size").value,
+          image: data.thumbnail,
+        });
+      }
+
       localStorage.setItem("cart", JSON.stringify(cart));
+      console.log(`Added item to cart. Total items: ${cart.reduce((sum, item) => sum + item.quantity, 0)}`);
 
       // Redirects user to cart.html
       window.location.href = "cart.html";

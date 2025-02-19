@@ -125,8 +125,27 @@ main {
 /* toggle menu */
 .payView {
   grid-column: 1 / span 2;
-  margin: 3vw auto auto 1vw;
+  margin: 3vw auto auto 2vw;
 }
+
+/* #selectElement {
+  height: 6vw;
+  width: 28vw;
+  background-color: var(--background-color);
+
+  font-family: "Roboto Mono", serif;
+  color: #838383;
+  font-style: italic;
+  font-size: 2cqw;
+
+  border: 0.5px solid var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#selectElement:hover {
+  border: 1px solid var(--primary-color);
+} */
 
 .payView button {
   background-color: #39393900;
@@ -276,7 +295,7 @@ h3 {
   padding-left: 3vw;
   background-position: left;
 
-  /* display: none; */
+  display: none;
 }
 
 /* sale */
@@ -405,13 +424,21 @@ h3 {
     margin: 4vw auto auto 0vw;
   }
 
+  /* #selectElement {
+    height: 4vw;
+    width: 25vw;
+    font-size: 1cqw;
+
+    padding: 0.5vw;
+  } */
+
   .payView button {
     font-size: 0.8cqw;
     background-image: url(assets/knap.svg);
     width: 12vw;
     height: 4vw;
 
-    margin-left: 0vw;
+    margin-left: 1vw;
   }
 
   /* in stock / sold out */
@@ -544,12 +571,4 @@ h3 {
 
 .hide {
   visibility: hidden;
-}
-
-.none {
-  display: none;
-}
-
-.block {
-  display: block;
 }

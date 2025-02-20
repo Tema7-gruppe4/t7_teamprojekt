@@ -65,13 +65,15 @@ main {
 
   object-fit: cover;
   height: 500px;
+
+  background-color: rgb(233, 227, 227);
 }
 
 .brandView {
   color: var(--text-color);
   font-family: "Roboto Mono", serif;
   font-weight: 600;
-  font-size: 5cqw;
+  font-size: 4cqw;
 
   margin-left: 2vw;
 }
@@ -79,14 +81,14 @@ main {
 .h1View {
   font-family: "Press Start 2P", serif;
   color: var(--text-color);
-  font-size: 7cqw;
+  font-size: 6cqw;
   margin-left: 2vw;
   padding-bottom: 2vw;
 }
 
 .textOnImage {
   grid-row: 1;
-  grid-column: 1;
+  grid-column: 1 / span 2;
 
   display: flex;
   flex-direction: column;
@@ -170,7 +172,7 @@ main {
   margin: auto 2vw auto 2vw;
 }
 
-#collapsible {
+.collapsible {
   cursor: pointer;
   background-color: var(--background-color);
   border: none;
@@ -184,12 +186,12 @@ main {
   text-align: left;
 }
 
-#content p {
+.content p {
   font-family: "Roboto Mono", serif;
   color: var(--text-color);
 }
 
-#content {
+.content {
   display: none;
   margin-top: 2vw;
 }
@@ -198,7 +200,7 @@ main {
   display: flex;
 }
 
-#viewMore {
+.viewMore {
   font-family: "Roboto Mono", serif;
   color: var(--text-color);
   text-align: right;
@@ -206,7 +208,7 @@ main {
   font-size: 4cqw;
 }
 
-#viewLess {
+.viewLess {
   font-family: "Roboto Mono", serif;
   color: var(--text-color);
   text-align: right;
@@ -299,7 +301,7 @@ h3 {
 }
 
 /* sale */
-#nowPrice {
+.nowPrice {
   margin-left: 2vw;
   margin-bottom: 2vw;
   font-family: "Press Start 2P", serif;
@@ -367,8 +369,8 @@ h3 {
 
   /* image + product name + brand */
   #productView {
-    grid-template-columns: 5fr 1fr;
-    margin-top: 3vw;
+    grid-template-columns: 6fr 1fr;
+    margin-top: 5vw;
   }
 
   #imageView {
@@ -376,16 +378,16 @@ h3 {
     grid-row: 1 / span 6;
 
     object-fit: contain;
-    height: 80%;
+    height: 90%;
   }
 
   .brandView {
-    font-size: 2cqw;
+    font-size: 1cqw;
     margin-left: 0vw;
   }
 
   .h1View {
-    font-size: 5cqw;
+    font-size: 4cqw;
     margin-left: 0vw;
     padding-bottom: 2vw;
   }
@@ -438,7 +440,7 @@ h3 {
     width: 12vw;
     height: 4vw;
 
-    margin-left: 1vw;
+    margin-left: 0vw;
   }
 
   /* in stock / sold out */
@@ -468,18 +470,18 @@ h3 {
     width: 45%;
   }
 
-  #collapsible {
+  .collapsible {
     font-size: 1cqw;
 
     width: 100%;
     text-align: left;
   }
 
-  #viewMore {
+  .viewMore {
     font-size: 1cqw;
   }
 
-  #viewLess {
+  .viewLess {
     font-size: 1cqw;
   }
 
@@ -528,7 +530,7 @@ h3 {
   }
 
   /* sale */
-  #nowPrice {
+  .nowPrice {
     margin-left: 0vw;
     margin-top: 1vw;
 
@@ -571,4 +573,12 @@ h3 {
 
 .hide {
   visibility: hidden;
+}
+
+.block {
+  display: block;
+}
+
+.none {
+  display: none;
 }

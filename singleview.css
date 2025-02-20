@@ -128,7 +128,7 @@ main {
   margin: 3vw auto auto 2vw;
 }
 
-#selectElement {
+/* #selectElement {
   height: 6vw;
   width: 28vw;
   background-color: var(--background-color);
@@ -145,7 +145,7 @@ main {
 
 #selectElement:hover {
   border: 1px solid var(--primary-color);
-}
+} */
 
 .payView button {
   background-color: #39393900;
@@ -424,13 +424,13 @@ h3 {
     margin: 4vw auto auto 0vw;
   }
 
-  #selectElement {
+  /* #selectElement {
     height: 4vw;
     width: 25vw;
     font-size: 1cqw;
 
     padding: 0.5vw;
-  }
+  } */
 
   .payView button {
     font-size: 0.8cqw;

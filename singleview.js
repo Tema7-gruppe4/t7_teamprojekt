@@ -1,36 +1,20 @@
-// aditional info....
-const additionalInfo = document.getElementById("collapsible");
-const content = document.getElementById("content");
-const more = document.getElementById("viewMore");
-const less = document.getElementById("viewLess");
-
-additionalInfo.addEventListener("click", (event) => {
-  console.log("click");
-
-  if (content.style.display === "block") {
-    content.style.display = "none";
-    less.style.visibility = "hidden";
-    more.style.visibility = "visible";
-  } else {
-    content.style.display = "block";
-    more.style.visibility = "hidden";
-    less.style.visibility = "visible";
-  }
-});
-
 // dynamisk
-const singeViewContainer = document.querySelector("#singleView");
-const commentsViewContainer = document.querySelector("#commentsView");
+const singeViewContainer = document.getElementById("singleView");
+const commentsViewContainer = document.getElementById("commentsView");
 
 const ProductId = new URLSearchParams(window.location.search).get("id");
 console.log("produkt loader... med id:", ProductId);
 
+let alldata;
+
 fetch(`https://dummyjson.com/products/${ProductId}`)
   .then((Response) => Response.json())
   .then((data) => {
+    console.log("henter html del 1");
+    alldata = data;
     singeViewContainer.innerHTML = `
     <div class="productView">
-          <img id="imageView" src="${thumbnail}" alt="product image" /> 
+          <img id="imageView" src="${data.thumbnail}" alt="product image" /> 
 
           <div id="onSaleLabel">
             <h2 id="onSale" class="${data.discount && "show"}">-${data.discount}%</h2>
@@ -49,7 +33,7 @@ fetch(`https://dummyjson.com/products/${ProductId}`)
             <p>(for 1)</p>
           </div>
 
-          <h2 id="nowPrice" class="${data.discount && "show"}>NOW ${data.discount && Math.floor(data.price * (data.discountPercentage / 100))}</h2>
+          <h2 class="nowPrice ${data.discountPercentage && "show"}">NOW ${data.discountPercentage && Math.floor(data.price * (data.discountPercentage / 100))}</h2>
 
           <div class="payView">
             <!-- id="soldOut" for udslogt design -->
@@ -64,42 +48,56 @@ fetch(`https://dummyjson.com/products/${ProductId}`)
 
         <div class="line">
           <div class="info">
-            <button id="collapsible">ADDITIONAL INFO</button>
-            <p id="viewMore">+</p>
-            <p id="viewLess">-</p>
+            <button class="collapsible">ADDITIONAL INFO</button>
+            <p class="viewMore">+</p>
+            <p class="viewLess">-</p>
           </div>
-          <div id="content">
+          <div class="content">
             <p><strong>weight:</strong> ${data.weight}g.</p>
             <p><strong>dimentions:</strong> ${data.width} width, ${data.height} height, ${data.depth} depth</p>
             <p><strong>shipping time:</strong> ${data.shippingInformation}</p>
           </div>
-        </div>
-        `;
+        </div>`;
+    showComments(data.reviews);
   });
 
-fetch(`https://dummyjson.com/products/${ProductId}`)
-  .then((Response) => Response.json())
-  .then((data) => showComments(data));
-
 function showComments(comments) {
-  console.log(comments);
+  console.log("henter html del 2", comments);
 
   const markup = comments
-
     .map(
       (comment) => `
          <div class="line lineDesktop">
-          <p class="costumerName">${data.reviewerName}</p>
-          <p class="commentDAte">date: ${data.date}</p>
-          <p class="comment">"${data.comment}"</p>
+          <p class="costumerName">${comment.reviewerName}</p>
+          <p class="commentDAte">date: ${comment.date}</p>
+          <p class="comment">"${comment.comment}"</p>
         </div>
       `
     )
-
     .join("");
   console.log(markup);
   commentsViewContainer.innerHTML = markup;
 }
+
+// aditional info....
+// const additionalInfo = document.getElementsByClassName("collapsible");
+// const content = document.getElementsByClassName("content");
+// const more = document.getElementById("viewMore");
+// const less = document.getElementById("viewLess");
+
+// additionalInfo.addEventListener("click", (event) => {
+//   console.log("click");
+
+//   if (content.style.display === "block") {
+//     content.style.display = "none";
+//     less.style.visibility = "hidden";
+//     more.style.visibility = "visible";
+//   } else {
+//     content.style.display = "block";
+//     more.style.visibility = "hidden";
+//     less.style.visibility = "visible";
+//   }
+// });
 
 // Initialize clickCount
 let clickCount = 1;

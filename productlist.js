@@ -9,6 +9,7 @@ if (category) {
   endpoint = `https://dummyjson.com/products/category/${category}?limit=55`;
 }
 
+// FILTRERING
 let gemData;
 const filterSelecter = document.querySelector("#filter");
 let filter = "all";
@@ -26,9 +27,11 @@ function showList(data) {
     if (filter === "all") {
       return true;
     } else if (filter === "saleLabel") {
-      return product.discountPercentage; // Hvis rabat eksisterer
+      return product.discountPercentage;
+      // Hvis der er rabat
     } else if (filter === "soldOutLabel") {
-      return product.availabilityStatus !== "Sold Out"; // Kun produkter på lager
+      return product.availabilityStatus !== "Sold Out";
+      // Kun produkter på lager
     }
     return true;
   });
@@ -45,7 +48,7 @@ function showList(data) {
   const markup = filteredData
     .map(
       (product) => `
-      <h1>${product.category}
+     
       
             <article class="productlist_card">
                 <div class="img_productlist">
@@ -72,7 +75,7 @@ function showList(data) {
                 </div>
                 <p class="product-category">Category: ${product.category}</p>
             </article>
-      </h1>
+      
             
             `
     )

@@ -45,6 +45,7 @@ function showList(data) {
   const markup = filteredData
     .map(
       (product) => `
+      <h1>${product.category}
       
             <article class="productlist_card">
                 <div class="img_productlist">
@@ -71,6 +72,8 @@ function showList(data) {
                 </div>
                 <p class="product-category">Category: ${product.category}</p>
             </article>
+      </h1>
+            
             `
     )
     .join("");

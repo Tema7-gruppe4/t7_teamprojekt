@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Put your description here." />
+
     <title>Fresh Cart</title>
     <!-- links -->
     <!-- css -->
@@ -44,9 +46,9 @@
       </div>
       <nav class="menu">
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Shop</a></li>
-          <li><a href="#">Cart</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productlist.html">Shop</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </nav>
     </header>
@@ -67,7 +69,17 @@
     </section>
 
     <!-- catergorier til javascript -->
-    <section class="categorylist"></section>
+    <section class="categorylist">
+      <a href="productlist.html?category=groceries">Groceries</a>
+      <a href="productlist.html?category=beauty">Beauty</a>
+      <a href="productlist.html?category=furniture">Furniture</a>
+      <a href="productlist.html?category=fragrances">Fragrances</a>
+    </section>
+
+    <!-- Cart -->
+    <div id="cart" class="cart">
+      <img src="assets/cart.svg" alt="Cart" />
+    </div>
 
     <!-- Comments Banner -->
     <div class="banner">
@@ -107,8 +119,9 @@
         <img class="lille-logo" src="assets/lille-logo.svg" alt="Fresh Cart" />
       </div>
       <h3 class="sign-up">SIGN UP AND NEVER MISS OUT!</h3>
-      <input type="email" placeholder="Enter email here..." />
-      <button class="subscribe">Subscribe</button>
+      <input type="email" id="email-input" placeholder="Enter email here..." />
+      <button class="subscribe" id="subscribe-btn">Subscribe</button>
+      <p id="success-message"></p>
     </section>
 
     <!-- Footer -->
@@ -118,9 +131,8 @@
           <a href="#">Contact us or find more inspiration</a>
         </div>
         <div class="footer-socials">
-          <a href="mailto:emmu0002@stud.kea.dk">
-            <img src="assets/mail.svg" alt="Email" />
-          </a>
+          <img src="assets/mail.svg" alt="Email" />
+
           <img src="assets/instagram.svg" alt="Instagram" />
           <img src="assets/facebook.svg" alt="Facebook" />
         </div>

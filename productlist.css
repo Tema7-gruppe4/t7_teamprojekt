@@ -9,6 +9,10 @@ img {
   height: auto;
 }
 
+.logo {
+  display: block;
+}
+
 main {
   max-width: 100%;
   margin: 0 auto;
@@ -67,10 +71,61 @@ h1 {
   margin-bottom: 20px;
 }
 
+.saleLabel {
+  font-family: "Press Start 2P", serif;
+  font-size: 0.5rem;
+  font-weight: bold;
+  visibility: hidden;
+  text-transform: uppercase;
+}
+.saleOn_img {
+  position: absolute;
+  visibility: visible;
+  bottom: 10px;
+  right: 10px;
+  background-color: #3669db;
+  color: white;
+  padding: 5px;
+}
+
+.soldOut {
+  opacity: 0.5;
+}
+.soldOutLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  font-size: 0.1rem;
+  font-family: "Montserrat", serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 5px;
+  visibility: hidden;
+}
+.soldOut_img {
+  position: absolute;
+  visibility: visible;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
 .productlist_container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
+  width: 100%;
 }
 .productlist_card {
   border: 2px solid black;
@@ -78,16 +133,26 @@ h1 {
   border-image-width: 2;
   border-image-outset: 0;
   border-image-source: url(assets/dot-emty.svg);
-  padding: 22px;
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+
+  background-color: transparent;
+  position: relative;
 }
 .img_productlist {
   position: relative;
   text-align: center;
   background-color: rgb(233, 227, 227);
+  padding: 10px;
 }
+.img_productlist img {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .img_productlist h2 {
   position: absolute;
   top: 10px;
@@ -97,17 +162,20 @@ h1 {
   font-family: "Press Start 2P", serif;
   padding: 5px 10px;
   border-radius: 5px;
-  font-size: 0.4rem;
+  font-size: 0.6rem;
   text-transform: uppercase;
   font-weight: 200;
-  line-height: 0.5rem;
+  line-height: 0.9rem;
   max-width: 90%;
   width: 100%;
 }
 .pris_addtocart {
   display: flex;
-  align-items: center;
+
+  flex-direction: column;
   gap: 5px;
+  margin-top: 10px;
+  width: 100%;
 }
 .add-to-cart {
   display: flex;
@@ -126,7 +194,7 @@ h1 {
   text-decoration: none;
   text-align: center;
   font-weight: normal;
-  font-size: 0.35rem;
+  font-size: 0.5rem;
   white-space: nowrap;
   font-family: "Press Start 2P", serif;
   text-transform: uppercase;
@@ -135,57 +203,80 @@ h1 {
 .price-container {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   white-space: nowrap;
   font-family: "Press Start 2P", serif;
   color: #3669db;
   font-size: 0.4rem;
+}
+.dashed {
+  text-decoration: line-through;
+  color: #3669db;
+  margin-right: 4px;
+}
+/*viser den nye pris*/
+.new-price {
+  font-weight: bolder;
+  color: #3669db;
+  font-family: "Press Start 2P", serif;
 }
 .icon {
   width: 20px;
   height: 20px;
 }
 .productlist_card p {
-  font-size: 0.4rem;
+  display: block;
+  font-size: 0.5rem;
   font-weight: 100;
   color: #3669db;
   font-family: "Press Start 2P", serif;
-  margin-bottom: 10px;
+  margin-top: 10px; /* Giver lidt luft under prisen */
 }
-
 @media (min-width: 800px) {
   main {
-    max-width: 100%;
-    margin: 0 100px;
+    max-width: 75%;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
+
   .productlist_container {
-    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
   }
+
   h1 {
     font-family: "Press Start 2P", serif;
     font-size: 2.5rem;
     text-transform: uppercase;
   }
+
   .add-to-cart {
-    font-size: 0.8rem;
-    width: 70%;
-    max-width: 70%;
+    font-size: 0.4rem;
+    width: 50%;
   }
   .price-container {
-    font-size: 0.8rem;
+    font-size: 0.45rem;
+    width: 100%;
+    flex-wrap: wrap;
   }
   .productlist_card p {
-    font-size: 0.6rem;
+    font-size: 0.5rem;
   }
   .pris_addtocart {
     gap: 10px;
   }
   .img_productlist h2 {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: 100;
     line-height: 1.3rem;
   }
   .header_productlist {
     margin-top: 130px;
+  }
+  .img_productlist img {
+    max-width: 100%;
   }
 }

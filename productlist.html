@@ -37,14 +37,15 @@
           <img src="assets/search.svg" alt="Search" class="icon" id="search-icon" />
           <input type="text" id="search-field" class="search-field" placeholder="Search..." />
         </div>
-        <p>SHOP [ONLINE]</p>
+
+        <a href="index.html" class="lille-logo"><img src="assets/lille-logo.svg" alt="logo" /></a>
         <div class="menu-icon" onclick="toggleMenu()">☰</div>
       </div>
       <nav class="menu">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="productlist.html">Shop</a></li>
-          <li><a href="#">Cart</a></li>
+          <li><a href="cart.html">Cart</a></li>
         </ul>
       </nav>
     </header>
@@ -58,9 +59,11 @@
           </label>
 
           <select name="filter" id="filter">
-            <option value="all" selected="selected">filters</option>
-            <option value="saleLabel">SALE</option>
-            <option value="soldOutLabel">ON STOCK</option>
+            <option value="all" selected="selected">All</option>
+            <option value="saleLabel">Sale</option>
+            <option value="soldOutLabel">On Stock</option>
+            <option value="lowToHigh">Cheapest First</option>
+            <option value="highToLow">Most Expensive First</option>
           </select>
         </div>
       </div>
@@ -69,7 +72,7 @@
         <article class="productlist_card">
           <div class="img_productlist">
             <h2>titel</h2>
-            <a href="product.html">
+            <a href="singleview.html">
               <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png" alt="produkt" />
             </a>
           </div>
@@ -86,7 +89,7 @@
         <article class="productlist_card">
           <div class="img_productlist">
             <h2>titel</h2>
-            <a href="product.html">
+            <a href="singleview.html">
               <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png" alt="produkt" />
             </a>
           </div>
@@ -103,7 +106,7 @@
         <article class="productlist_card">
           <div class="img_productlist">
             <h2>titel</h2>
-            <a href="product.html">
+            <a href="singleview.html">
               <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png" alt="produkt" />
             </a>
           </div>
@@ -120,7 +123,7 @@
         <article class="productlist_card">
           <div class="img_productlist">
             <h2>titel</h2>
-            <a href="product.html">
+            <a href="singleview.html">
               <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png" alt="produkt" />
             </a>
           </div>
@@ -137,7 +140,7 @@
         <article class="productlist_card">
           <div class="img_productlist">
             <h2>titel</h2>
-            <a href="product.html">
+            <a href="singleview.html">
               <img src="https://cdn.dummyjson.com/products/images/beauty/Essence%20Mascara%20Lash%20Princess/1.png" alt="produkt" />
             </a>
           </div>
@@ -153,15 +156,23 @@
         </article>
       </div>
     </main>
+    <section class="newsletter">
+      <div class="footer-logo">
+        <img class="lille-logo" src="assets/lille-logo.svg" alt="Fresh Cart" />
+      </div>
+      <h3 class="sign-up">SIGN UP AND NEVER MISS OUT!</h3>
+      <input type="email" id="email-input" placeholder="Enter email here..." />
+      <button class="subscribe" id="subscribe-btn">Subscribe</button>
+      <p id="success-message"></p>
+    </section>
     <footer>
       <div class="footer-content">
         <div class="footer-links">
           <a href="#">Contact us or find more inspiration</a>
         </div>
         <div class="footer-socials">
-          <a href="mailto:emmu0002@stud.kea.dk">
-            <img src="assets/mail.svg" alt="Email" />
-          </a>
+          <img src="assets/mail.svg" alt="Email" />
+
           <img src="assets/instagram.svg" alt="Instagram" />
           <img src="assets/facebook.svg" alt="Facebook" />
         </div>

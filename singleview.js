@@ -51,6 +51,7 @@ fetch(`https://dummyjson.com/products/${ProductId}`)
 
           <h2 id="nowPrice" class="${data.discount && "show"}>NOW ${data.discount && Math.floor(data.price * (data.discountPercentage / 100))}</h2>
 
+          <div class="payView">
             <!-- id="soldOut" for udslogt design -->
             <button class="addToCart">ADD TO CART</button>
           </div>

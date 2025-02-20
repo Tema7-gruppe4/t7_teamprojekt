@@ -70,6 +70,9 @@ h1 {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+.h1-produktliste {
+  display: block;
+}
 
 .saleLabel {
   font-family: "Press Start 2P", serif;

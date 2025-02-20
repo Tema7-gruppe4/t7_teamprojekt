@@ -4,13 +4,19 @@ const getString = window.location.search;
 const getSearch = new URLSearchParams(getString);
 const category = getSearch.get("category");
 
+let endpoint = "https://dummyjson.com/products?limit=55";
+if (category) {
+  endpoint = `https://dummyjson.com/products/category/${category}?limit=55`;
+}
+
 let gemData;
 const filterSelecter = document.querySelector("#filter");
 let filter = "all";
 
-fetch(`https://dummyjson.com/products?category=${category}&limit=55`)
+fetch(endpoint)
   .then((response) => response.json())
   .then((dataJSON) => {
+    console.log(endpoint);
     gemData = dataJSON.products; // Brug ".products"
     showList(gemData);
   });
@@ -34,11 +40,13 @@ function showList(data) {
     filteredData = filteredData.sort((a, b) => b.price - a.price); // Dyreste først
   }
 
-  console.log("Sorterede data:", filteredData); // Tjekker om sortering virker
+  //console.log("Sorterede data:", filteredData); // Tjekker om sortering virker
 
   const markup = filteredData
     .map(
       (product) => `
+      <h1>${product.category}
+      
             <article class="productlist_card">
                 <div class="img_productlist">
                     <h2>${product.title}</h2>
@@ -64,6 +72,8 @@ function showList(data) {
                 </div>
                 <p class="product-category">Category: ${product.category}</p>
             </article>
+      </h1>
+            
             `
     )
     .join("");
